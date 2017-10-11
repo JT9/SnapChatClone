@@ -40,6 +40,21 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
          
         })
         
+        //Load users from Firebase Database
+        //Getting rid of one of the objects
+        Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("snaps").observe(DataEventType.childRemoved, with: {(snapshot) in
+            print(snapshot)
+            //Looping through array to remove a specific index
+            var index = 0
+            for snap in self.snaps {
+                if snap.key == snapshot.key {
+                    self.snaps.remove(at: index)
+                }
+                index += 1
+            }
+            self.tableView.reloadData()
+    })
+        
     }
 
     

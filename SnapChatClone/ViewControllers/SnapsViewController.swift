@@ -32,12 +32,14 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             snap.imageURl = (snapshotValue!["imageURL"] as? String)!
             snap.from = (snapshotValue!["email"] as? String)!
             snap.descrip = (snapshotValue!["description"] as? String)!
+            snap.key = snapshot.key
             
             //Added to snaps array
             self.snaps.append(snap)
             self.tableView.reloadData()
          
         })
+        
     }
 
     

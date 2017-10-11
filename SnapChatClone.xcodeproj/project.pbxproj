@@ -18,6 +18,7 @@
 		6016A98F1F8634ED002E904F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6016A98E1F8634ED002E904F /* GoogleService-Info.plist */; };
 		6042EA2A1F8DCCA800C9CB90 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6042EA291F8DCCA800C9CB90 /* SnapsViewController.swift */; };
 		609AA86B1F8DFB1B00FFB055 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609AA86A1F8DFB1B00FFB055 /* Snap.swift */; };
+		609AA86D1F8E023200FFB055 /* ViewSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609AA86C1F8E023200FFB055 /* ViewSnapViewController.swift */; };
 		60CEA6F81F8DD00E0054718C /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEA6F71F8DD00E0054718C /* PictureViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		6016A98E1F8634ED002E904F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6042EA291F8DCCA800C9CB90 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		609AA86A1F8DFB1B00FFB055 /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		609AA86C1F8E023200FFB055 /* ViewSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSnapViewController.swift; sourceTree = "<group>"; };
 		60CEA6F71F8DD00E0054718C /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		726246CD913A5C5E8B223D1A /* Pods-SnapChatClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChatClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnapChatClone/Pods-SnapChatClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +61,7 @@
 				6042EA291F8DCCA800C9CB90 /* SnapsViewController.swift */,
 				60CEA6F71F8DD00E0054718C /* PictureViewController.swift */,
 				600AAFEE1F8DDABE003A9731 /* SelectUserViewController.swift */,
+				609AA86C1F8E023200FFB055 /* ViewSnapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				6016A97F1F86333C002E904F /* SignInViewController.swift in Sources */,
 				60CEA6F81F8DD00E0054718C /* PictureViewController.swift in Sources */,
 				600AAFF11F8DED6B003A9731 /* User.swift in Sources */,
+				609AA86D1F8E023200FFB055 /* ViewSnapViewController.swift in Sources */,
 				600AAFEF1F8DDABE003A9731 /* SelectUserViewController.swift in Sources */,
 				609AA86B1F8DFB1B00FFB055 /* Snap.swift in Sources */,
 				6016A97D1F86333C002E904F /* AppDelegate.swift in Sources */,

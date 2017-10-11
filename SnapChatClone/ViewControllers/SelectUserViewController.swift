@@ -62,6 +62,8 @@ class SelectUserViewController: UIViewController, UITableViewDataSource, UITable
         let snap = ["email":user.email, "description":descrip,"imageURL":imageURL]
             
             Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
+        //Go back to root viewcontroller instead of having the user click back twice
+        navigationController!.popToRootViewController(animated: true)
     }
     
 }

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -114,6 +115,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="whq-K6-Jxq" id="2WI-gu-KbB"/>
+                        <segue destination="L9D-aO-6kb" kind="show" identifier="viewSnapSegue" id="Ben-mI-Rva"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6z-7z-pIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,6 +235,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqq-xK-UgU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="526" y="133"/>
+        </scene>
+        <!--View Snap View Controller-->
+        <scene sceneID="Vuc-S9-ofw">
+            <objects>
+                <viewController id="L9D-aO-6kb" customClass="ViewSnapViewController" customModule="SnapChatClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Guo-18-pZy"/>
+                        <viewControllerLayoutGuide type="bottom" id="h5d-oQ-n8F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9MD-7D-G3Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is me saying hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGa-U7-dDI">
+                                <rect key="frame" x="21" y="636" width="333" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wbo-kT-T6J">
+                                <rect key="frame" x="26" y="74" width="323" height="552"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nGa-U7-dDI" firstAttribute="top" secondItem="wbo-kT-T6J" secondAttribute="bottom" constant="10" id="4vz-Sy-Rry"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wbo-kT-T6J" secondAttribute="trailing" constant="10" id="RSX-Z0-vE2"/>
+                            <constraint firstItem="h5d-oQ-n8F" firstAttribute="top" secondItem="nGa-U7-dDI" secondAttribute="bottom" constant="10" id="WPp-2K-Lw1"/>
+                            <constraint firstItem="nGa-U7-dDI" firstAttribute="leading" secondItem="9MD-7D-G3Y" secondAttribute="leadingMargin" constant="5" id="bHU-w7-WUO"/>
+                            <constraint firstItem="wbo-kT-T6J" firstAttribute="top" secondItem="Guo-18-pZy" secondAttribute="bottom" constant="10" id="nSw-hD-NTc"/>
+                            <constraint firstItem="wbo-kT-T6J" firstAttribute="leading" secondItem="9MD-7D-G3Y" secondAttribute="leadingMargin" constant="10" id="uCH-9j-idh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nGa-U7-dDI" secondAttribute="trailing" constant="5" id="z7z-Dl-sMd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="wbo-kT-T6J" id="wNJ-1E-P7a"/>
+                        <outlet property="label" destination="nGa-U7-dDI" id="pXy-nq-mR2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l6p-vF-fPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247" y="955"/>
         </scene>
     </scenes>
 </document>

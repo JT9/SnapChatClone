@@ -45,6 +45,9 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return snaps.count
     }
     
+    
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
@@ -55,6 +58,21 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let snap = snaps[indexPath.row]
+        //Pass snap that was selected
+        performSegue(withIdentifier: "viewSnapSegue", sender: snap)
+    }
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Only run this code if it is the viewSnapSegue as SnapsViewController is connected to two viewControllers
+        if segue.identifier == "viewSnapSegue" {
+            let nextViewController = segue.destination as! ViewSnapViewController
+            nextViewController.snap = sender as! Snap
+        }
+    }
+    
+    
     @IBAction func logoutTapped(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)

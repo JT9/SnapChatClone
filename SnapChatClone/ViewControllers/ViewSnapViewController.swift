@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewSnapViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
@@ -19,6 +20,7 @@ class ViewSnapViewController: UIViewController {
         super.viewDidLoad()
 
         label.text = snap.descrip
+        imageView.sd_setImage(with: URL(string: snap.imageURl))
     }
 
 }

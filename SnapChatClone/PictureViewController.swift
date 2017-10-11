@@ -53,13 +53,17 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         let imagesFolder =
             Storage.storage().reference().child("images")
         
-        let imageData = UIImagePNGRepresentation(imageView.image!)!
+        //let imageData = UIImagePNGRepresentation(imageView.image!)!
+        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
         
         imagesFolder.child("images.png").putData(imageData, metadata: nil, completion: {(metadata, error) in
             print("We tried to upload")
             if error != nil {
                 print("We had an error:\(error)")
             } else {
+                
+                print(metadata?.downloadURL())
+                
                 //Move to another ViewController
                 self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
             }

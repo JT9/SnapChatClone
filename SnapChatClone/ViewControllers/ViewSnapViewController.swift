@@ -29,6 +29,9 @@ class ViewSnapViewController: UIViewController {
         //print("Goodbye")
         //Remove image from database from current user
         Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("snaps").child(snap.key).removeValue()
+        Storage.storage().reference().child("images").child("\(snap.uuid).jpg").delete { (error) in
+            print("We deleted the pic")
+        }
     }
 
 }

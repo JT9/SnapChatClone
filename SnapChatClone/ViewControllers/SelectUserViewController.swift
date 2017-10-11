@@ -18,6 +18,7 @@ class SelectUserViewController: UIViewController, UITableViewDataSource, UITable
     //User from PictureViewController to pass info
     var imageURL = ""
     var descrip = ""
+    var uuid = ""
     
     
     override func viewDidLoad() {
@@ -59,7 +60,7 @@ class SelectUserViewController: UIViewController, UITableViewDataSource, UITable
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = users[indexPath.row]
-        let snap = ["email":user.email, "description":descrip,"imageURL":imageURL]
+        let snap = ["email":user.email, "description":descrip,"imageURL":imageURL, "uuid":uuid]
             
             Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
         //Go back to root viewcontroller instead of having the user click back twice

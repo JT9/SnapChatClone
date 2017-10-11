@@ -33,6 +33,7 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             snap.from = (snapshotValue!["email"] as? String)!
             snap.descrip = (snapshotValue!["description"] as? String)!
             snap.key = snapshot.key
+            snap.uuid = (snapshotValue!["uuid"] as? String)!
             
             //Added to snaps array
             self.snaps.append(snap)

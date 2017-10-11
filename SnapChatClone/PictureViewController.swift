@@ -56,7 +56,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         //let imageData = UIImagePNGRepresentation(imageView.image!)!
         let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
         
-        imagesFolder.child("images.png").putData(imageData, metadata: nil, completion: {(metadata, error) in
+        imagesFolder.child("\(NSUUID().uuidString).jpg").putData(imageData, metadata: nil, completion: {(metadata, error) in
             print("We tried to upload")
             if error != nil {
                 print("We had an error:\(error)")

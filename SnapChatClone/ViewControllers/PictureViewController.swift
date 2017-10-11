@@ -26,6 +26,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
 
         imagePicker.delegate = self
+        
+        nextButton.isEnabled = false
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -40,6 +42,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         //Testing purposes for savedPhotosAlbum need to change to camera once on device
         imagePicker.sourceType = .savedPhotosAlbum
         imagePicker.allowsEditing = false
+        
+        nextButton.isEnabled = true
         
         present(imagePicker, animated: true, completion: nil)
         

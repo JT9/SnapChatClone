@@ -65,7 +65,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print(metadata?.downloadURL())
                 
                 //Move to another ViewController
-                self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
+                self.performSegue(withIdentifier: "selectUserSegue", sender: metadata?.downloadURL()!.absoluteString)
             }
         })
         
@@ -73,8 +73,9 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //To Upload image
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-
+        let nextViewController = segue.destination as! SelectUserViewController
+        nextViewController.imageURL = sender as! String
+        nextViewController.descrip = descriptionTextField.text!
     }
     
 }

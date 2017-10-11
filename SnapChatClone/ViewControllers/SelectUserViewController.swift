@@ -15,6 +15,11 @@ class SelectUserViewController: UIViewController, UITableViewDataSource, UITable
     //Empty array to hold users
     var users: [User] = []
     
+    //User from PictureViewController to pass info
+    var imageURL = ""
+    var descrip = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
@@ -54,7 +59,7 @@ class SelectUserViewController: UIViewController, UITableViewDataSource, UITable
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = users[indexPath.row]
-        let snap = ["email":user.email, "description":"Hello","imageURL":"www.img.yea"]
+        let snap = ["email":user.email, "description":descrip,"imageURL":imageURL]
             
             Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
     }

@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="1247.2" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Picture View Controller-->
         <scene sceneID="X3a-uL-FKP">
             <objects>
-                <viewController id="ifQ-X7-0iC" sceneMemberID="viewController">
+                <viewController id="ifQ-X7-0iC" customClass="PictureViewController" customModule="SnapChatClone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SbK-u3-8zt"/>
                         <viewControllerLayoutGuide type="bottom" id="skd-Vm-R4B"/>
@@ -133,6 +133,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-ba-CNy">
                                 <rect key="frame" x="171" y="281" width="32" height="30"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextTapped:" destination="ifQ-X7-0iC" eventType="touchUpInside" id="OWC-4I-t8o"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,8 +150,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xPT-C5-3L4">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="j7d-FO-FUg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="j7d-FO-FUg">
+                            <connections>
+                                <action selector="cameraTapped:" destination="ifQ-X7-0iC" id="j0m-XW-pNG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="DA8-Wi-vVh" id="15n-vz-iJE"/>
+                        <outlet property="imageView" destination="KHW-VC-Tf7" id="uFC-xu-23z"/>
+                        <outlet property="nextButton" destination="7XD-ba-CNy" id="KPc-89-hCO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N35-Ol-eaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

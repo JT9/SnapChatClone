@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -43,7 +44,33 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
+    //User clicks on next button to upload their selected image
     @IBAction func nextTapped(_ sender: Any) {
+        
+        //Button is disabled when user clicks on it to prevent them from pushing it more than once
+        nextButton.isEnabled = false
+        
+        let imagesFolder =
+            Storage.storage().reference().child("images")
+        
+        let imageData = UIImagePNGRepresentation(imageView.image!)!
+        
+        imagesFolder.child("images.png").putData(imageData, metadata: nil, completion: {(metadata, error) in
+            print("We tried to upload")
+            if error != nil {
+                print("We had an error:\(error)")
+            } else {
+                //Move to another ViewController
+                self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
+            }
+        })
+        
+    }
+    
+    //To Upload image
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+
     }
     
 }
